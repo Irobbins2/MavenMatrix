@@ -5,6 +5,7 @@ public class Sandwhich {
     private String BreadType;
     private boolean isToasted;
 
+
     public Sandwhich(Integer size, String breadType, boolean isToasted) {
         Size = size;
         BreadType = breadType;

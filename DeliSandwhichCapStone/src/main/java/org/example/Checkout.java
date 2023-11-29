@@ -3,7 +3,8 @@ package org.example;
 import java.util.ArrayList;
 
 public class Checkout {
-    private ArrayList<Sandwhich> sandwiches;
+    private ArrayList<Sandwich> sandwiches;
+    private ArrayList<PremiumToppings> premiumToppings;
     private ArrayList<Drink> drinks;
     private ArrayList<Chips> chips;
 
@@ -13,7 +14,7 @@ public class Checkout {
         chips = new ArrayList<>();
     }
 
-    public void addSandwich(Sandwhich sandwich) {
+    public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
     }
 
@@ -32,34 +33,27 @@ public class Checkout {
     }
 
     public double totalPrice() {
-        double totalPrice = basePrice();
+        double totalPrice = 0;
+        for (Sandwich sandwich : sandwiches) {
 
-        for (Sandwhich sandwich : sandwiches) {
-            totalPrice += sandwich.getMeatPrice() + sandwich.getCheesePrice();
+            totalPrice+=sandwich.getSandwichPrice();
         }
 
+        for (PremiumToppings premiumToppings : premiumToppings) {
+            totalPrice += premiumToppings.getTotalPremiumPrice();
+        }
+        /*for (PremiumToppings premiumToppings : premiumToppings) {
+            totalPrice += premiumToppings.getPremiumCheesePrice();
+        }*/
 
-        // Add similar logic for drinks and chips if they have additional costs.
+        for (Drink drink : drinks) {
+            totalPrice += drink.getDrinkPrice();
+        }
+
+        for (Chips chip : chips) {
+            totalPrice += chip.getChipsPrice();
+        }
 
         return totalPrice;
     }
-
-    private double basePrice() {
-        // Assuming your base price depends on the size of the sandwich
-        // Adjust this based on your actual implementation.
-        // I'm using a placeholder value for demonstration purposes.
-        String size = "medium"; // Replace with actual logic to get the size
-        switch (size.toLowerCase()) {
-            case "small":
-                return 5.50 + 1;
-            case "medium":
-                return 7.00 + 1;
-            case "large":
-                return 8.50 + 1;
-            default:
-                return 0.0; // Handle unknown size
-        }
-    }
-
-    // Other methods and logic specific to your Checkout class
 }

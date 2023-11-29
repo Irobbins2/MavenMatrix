@@ -18,6 +18,8 @@ public class UserInterface {
 
     private static void orderSandwich() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("What type of bread do you want?");
+        String breadType = scanner.nextLine();
 
         System.out.println("Please select sandwich size (4/8/12 inches): ");
         int sandwichSize = scanner.nextInt();
@@ -26,8 +28,8 @@ public class UserInterface {
 
         System.out.println("Do you want premium cheese? (yes/no): ");
         boolean premiumCheese = "yes".equalsIgnoreCase(scanner.next());
-        PremiumToppings premiumToppings = new PremiumToppings(sandwichSize, premiumMeat, premiumCheese);
-        checkout.addSandwich(premiumToppings);
+       // PremiumToppings premiumToppings = new PremiumToppings(sandwichSize, premiumMeat, premiumCheese);
+       // checkout.addSandwich(premiumToppings);
     }
     /*private static void orderpremium() {
     Scanner scanner = new Scanner(System.in);

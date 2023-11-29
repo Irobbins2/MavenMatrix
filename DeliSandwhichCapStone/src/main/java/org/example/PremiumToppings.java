@@ -9,7 +9,6 @@ public class PremiumToppings extends Topping {
         this.premiumToppingType = premiumToppingType;
     }
 
-
     public double getPrice(int sandwichSize) {
         if (premiumToppingType==PremiumToppingType.CHEESE) {
             if (sandwichSize == 4) {

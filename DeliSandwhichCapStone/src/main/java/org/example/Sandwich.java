@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 public class Sandwich {
     private int sandwichSize;
+    private String breadType;
     private ArrayList<Topping> toppings = new ArrayList<>();
 
-    public Sandwich(int sandwichSize) {
+    public Sandwich(int sandwichSize, String breadType) {
         this.sandwichSize = sandwichSize;
+        this.breadType = breadType;
     }
 
     public int getSandwichSize() {

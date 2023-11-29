@@ -1,3 +1,4 @@
+/*
 package org.example;
 
 import java.io.BufferedWriter;
@@ -9,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 public class ReceiptFileManager {
     private String fileName;
 
-    public ReceiptFileManager(String fileName) {
+     public ReceiptFileManager(String fileName) {
         this.fileName = fileName;
     }
     ReceiptFileManager receipt =  new ReceiptFileManager("src/main/resources/Receipt.csv");
@@ -36,4 +37,4 @@ public class ReceiptFileManager {
             e.printStackTrace();
         }
     }
-}
+}*/

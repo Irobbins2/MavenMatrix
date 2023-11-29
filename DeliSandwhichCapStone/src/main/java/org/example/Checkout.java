@@ -36,15 +36,8 @@ public class Checkout {
         double totalPrice = 0;
         for (Sandwich sandwich : sandwiches) {
 
-            totalPrice+=sandwich.getSandwichPrice();
+            totalPrice+=sandwich.getTotalPrice();
         }
-
-        for (PremiumToppings premiumToppings : premiumToppings) {
-            totalPrice += premiumToppings.getTotalPremiumPrice();
-        }
-        /*for (PremiumToppings premiumToppings : premiumToppings) {
-            totalPrice += premiumToppings.getPremiumCheesePrice();
-        }*/
 
         for (Drink drink : drinks) {
             totalPrice += drink.getDrinkPrice();

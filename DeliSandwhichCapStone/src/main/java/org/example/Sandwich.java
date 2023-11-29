@@ -1,7 +1,10 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Sandwich {
-    public int sandwichSize;
+    private int sandwichSize;
+    private ArrayList<Topping> toppings = new ArrayList<>();
 
     public Sandwich(int sandwichSize) {
         this.sandwichSize = sandwichSize;
@@ -11,15 +14,7 @@ public class Sandwich {
         return sandwichSize;
     }
 
-    public  double getExtraMeatPrice(){return 0;};
-
-    public double getExtraCheesePrice(){return 0;};
-
-    public double getPremiumMeatPrice(){return 0;};
-
-    public  double getPremiumCheesePrice(){return 0;};
-
-    public double getSandwichPrice() {
+    public double getSandwichBasePrice() {
         double basePrice;
 
         switch (sandwichSize) {
@@ -39,6 +34,17 @@ public class Sandwich {
 
         return basePrice ;
     }
-
-    public  double getTotalPrice(){return 0;};
+    public void  addTopping(Topping topping){
+        toppings.add(topping);
+    }
+    public void  removeTopping(Topping topping){
+        toppings.remove(topping);
+    }
+    public double getTotalPrice(){
+        double totalprice=0;
+        for (Topping topping:toppings){
+            totalprice+= topping.getPrice(sandwichSize);
+        }
+        return getSandwichBasePrice()+ totalprice;
+    }
 }

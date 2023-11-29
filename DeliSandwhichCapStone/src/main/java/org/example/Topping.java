@@ -1,17 +1,13 @@
 package org.example;
 
-public class Topping {
+public abstract class Topping {
     private String name;
-    private String type;
-    private double price;
 
-    public Topping(String name, String type, double price) {
+
+    public Topping(String name) {
         this.name = name;
-        this.type = type;
-        this.price = price;
+
     }
 
-    public double getPrice() {
-        return price;
-    }
+    public abstract double getPrice(int sandwichSize);
 }

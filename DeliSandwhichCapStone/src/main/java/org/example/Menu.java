@@ -18,15 +18,11 @@ public class Menu {
         return Arrays.asList("Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapenos", "Cucumbers", "Pickles", "Guacamole", "Mushrooms");
     }
 
-    public static  List<String> getSauces(){
-        List<String> sauces = Arrays.asList(ANSI_WHITE + "Mayo ," + ANSI_RESET + ANSI_YELLOW  +"mustard ," + ANSI_RESET
-                + ANSI_RED +"ketchup ," + ANSI_RESET + ANSI_GREEN + "ranch ," + ANSI_RESET + ANSI_MIXED +"thousand islands ,"+ ANSI_RESET
-                + ANSI_ORANGE +"vinaigrette"+ ANSI_RESET);
+    public static  List<String> getSauces() {
+        List<String> sauces = Arrays.asList(ANSI_WHITE + "Mayo ," + ANSI_RESET + ANSI_YELLOW + "mustard ," + ANSI_RESET
+                + ANSI_RED + "ketchup ," + ANSI_RESET + ANSI_GREEN + "ranch ," + ANSI_RESET + ANSI_MIXED + "thousand islands ," + ANSI_RESET
+                + ANSI_ORANGE + "vinaigrette" + ANSI_RESET);
         return sauces;
-
-
-    public static List<String> getSauces() {
-        return Arrays.asList("Mayo", "Mustard", "Ketchup", "Ranch", "Thousand Islands", "Vinaigrette");
     }
 
     public static List<String> getCheese() {
@@ -44,7 +40,7 @@ public class Menu {
     }
 
     public static List<String> getChipsBrands() {
-        return Arrays.asList("Lays", "Doritos", "Pringles", "Ruffles", "Cheetos", "Tostitos")
+        return Arrays.asList("Lays", "Doritos", "Pringles", "Ruffles", "Cheetos", "Tostitos");
     }
 
     public static List<String> getDrinkBrands() {

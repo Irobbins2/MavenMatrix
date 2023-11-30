@@ -1,4 +1,3 @@
-/*
 package org.example;
 
 
@@ -7,18 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class ReceiptFileManager{
 
-    private String fileName;
-    private ReceiptFileManager receipt;
-
-
-
-    public ReceiptFileManager(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public void createReceipt(String[] items, double[] prices, double totalPrice, ArrayList<RegularToppings> regularTList, ArrayList<String> sauceList, ArrayList<Drink> drinks, ArrayList<Chips> chips) {
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -124,5 +112,5 @@ public class ReceiptFileManager {
     }
 }
 
-}*/
+}
 

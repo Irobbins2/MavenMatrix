@@ -1,6 +1,7 @@
 package org.example;
 
-public class ColoredText {
+public class
+ColoredText {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_WHITE = "\u001B[37m";
     public static final String ANSI_YELLOW = "\u001B[33m";

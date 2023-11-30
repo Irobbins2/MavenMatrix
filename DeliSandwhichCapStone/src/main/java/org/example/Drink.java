@@ -8,6 +8,9 @@ public class Drink {
         this.size = size;
         this.brand = brand;
     }
+    public String getSize() {
+        return size;
+    }
 
     public double getDrinkPrice() {
         switch (size.toLowerCase()) {

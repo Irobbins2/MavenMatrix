@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.example.ColoredText.*;
+
 public class Menu {
     public static List<String> getBreadType(){
         List<String> breadType = Arrays.asList("White, Wheat, Rye, Wrap");
@@ -21,7 +23,9 @@ public class Menu {
         return regularToppings;
     }
     public static  List<String> getSauces(){
-        List<String> sauces = Arrays.asList("mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
+        List<String> sauces = Arrays.asList(ANSI_WHITE + "Mayo ," + ANSI_RESET + ANSI_YELLOW  +"mustard ," + ANSI_RESET
+                + ANSI_RED +"ketchup ," + ANSI_RESET + ANSI_GREEN + "ranch ," + ANSI_RESET + ANSI_MIXED +"thousand islands ,"+ ANSI_RESET
+                + ANSI_ORANGE +"vinaigrette"+ ANSI_RESET);
         return sauces;
     }
     public static  List<String> getCheese(){

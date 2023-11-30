@@ -9,11 +9,42 @@ import java.util.Scanner;
 public class UserInterface {
     private static Checkout checkout = new Checkout();
 
+
     public static void runOrderingSystem() throws IOException {
         Scanner scanner = new Scanner(System.in);
-        boolean addingItems = true;
+        boolean running = true;
 
-        while (addingItems) {
+        while (running) {
+            displayHomeScreen();
+
+            int userChoice = scanner.nextInt();
+            switch (userChoice) {
+                case 1:
+                    runOrderingSystem();
+                    break;
+                case 0:
+                    running = false;
+                    System.out.println("Exiting the application. Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
+                    break;
+            }
+        }
+    }
+
+    private static void displayHomeScreen() {
+        System.out.println("Welcome to the Sandwich Shop!");
+        System.out.println("1) New Order");
+        System.out.println("0) Exit");
+        System.out.print("Enter your choice: ");
+    }
+
+    static void runOrderingSystem() {
+        Scanner scanner = new Scanner(System.in);
+        boolean ordering = true;
+
+        while (ordering) {
             System.out.println("What would you like to order? (sandwich/drink/chips)");
             String itemType = scanner.next();
 
@@ -35,14 +66,17 @@ public class UserInterface {
             System.out.println("Would you like to add another item to your order? (yes/no)");
             String addAnother = scanner.next();
             if (!addAnother.equalsIgnoreCase("yes")) {
-                addingItems = false;
+                ordering = false;
             }
         }
 
-        System.out.println("Would you like a receipt? (yes/no)");
-        String wantReceipt = scanner.next();
-        if (wantReceipt.equalsIgnoreCase("yes")) {
+        System.out.println("Do you want to confirm your order? (yes/no)");
+        String confirmOrder = scanner.next();
+        if (confirmOrder.equalsIgnoreCase("yes")) {
             generateReceipt();
+        } else {
+            System.out.println("Order canceled. Returning to the main menu.");
+            checkout.clearOrder();
         }
     }
 
@@ -58,29 +92,30 @@ public class UserInterface {
         System.out.println("Do you want premium meat? (yes/no): ");
         boolean premiumMeat = "yes".equalsIgnoreCase(scanner.next());
 
-        System.out.println("What type of premium meat do you want?");
-        scanner.nextLine();
-        System.out.println("Meat Options: Steak, ham, salami, roast beef, chicken, bacon");
-        String meatType = scanner.nextLine();
-
-
-        // If the user wants premium meat, ask if they want extra meat
+        String meatType = "";
         boolean extraMeat = false;
+
         if (premiumMeat) {
+            System.out.println("What type of premium meat do you want?");
+            scanner.nextLine();
+            System.out.println("Meat Options: Steak, ham, salami, roast beef, chicken, bacon");
+            meatType = scanner.nextLine();
+
             System.out.println("Do you want extra meat? (yes/no): ");
             extraMeat = "yes".equalsIgnoreCase(scanner.next());
         }
+
         System.out.println("Do you want premium cheese? (yes/no): ");
         boolean premiumCheese = "yes".equalsIgnoreCase(scanner.next());
 
-        System.out.println("What type of premium cheese do you want?");
-        scanner.nextLine();
-        System.out.println("Cheese options : American, Provolone, Cheddar, Swiss");
-        String cheeseType = scanner.nextLine();
-
-
+        String cheeseType = "";
         boolean extraCheese = false;
+
         if (premiumCheese) {
+            System.out.println("What type of premium cheese do you want?");
+            scanner.nextLine();
+            System.out.println("Cheese options: American, Provolone, Cheddar, Swiss");
+            cheeseType = scanner.nextLine();
             System.out.println("Do you want extra cheese? (yes/no): ");
             extraCheese = "yes".equalsIgnoreCase(scanner.next());
         }
@@ -95,6 +130,7 @@ public class UserInterface {
                 sandwich.addTopping(extraMeatTopping);
             }
         }
+
         if (premiumCheese) {
             PremiumToppings premiumCheeseTopping = new PremiumToppings("Premium Cheese", PremiumToppingType.CHEESE);
             sandwich.addTopping(premiumCheeseTopping);
@@ -117,6 +153,20 @@ public class UserInterface {
                 sandwich.addTopping(topping);
             }
         }
+        boolean removeToppings=true;
+        while (removeToppings) {
+            System.out.println("Enter a regular topping to remove (type 'done' to finish): ");
+            System.out.println("Here are your options again: lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, pickles, guacamole, mushrooms");
+            String regularTopping = scanner.next();
+
+            if (regularTopping.equalsIgnoreCase("done")) {
+                removeToppings = false;
+            } else {
+                RegularToppings topping = new RegularToppings(regularTopping);
+                sandwich.removeTopping(topping);
+            }
+        }
+
         System.out.println("Do you want to add sauces? (yes/no): ");
         boolean addSauces = "yes".equalsIgnoreCase(scanner.next());
 
@@ -125,7 +175,6 @@ public class UserInterface {
             String sauceType = scanner.next();
             Sauces sauce = Sauces.valueOf(sauceType.toUpperCase());
 
-            // Add the chosen sauce to the sandwich
             if (sauce != null) {
                 RegularToppings sauceTopping = new RegularToppings(sauce.name());
                 sandwich.addTopping(sauceTopping);
@@ -134,7 +183,6 @@ public class UserInterface {
 
         checkout.addSandwich(sandwich);
     }
-
 
     private static void orderDrinks() {
         Scanner scanner = new Scanner(System.in);
@@ -147,6 +195,10 @@ public class UserInterface {
             int numberOfDrinks = scanner.nextInt();
 
             for (int i = 0; i < numberOfDrinks; i++) {
+
+                System.out.println("Available drinks:");
+                Menu.displayDrinksList();
+
                 System.out.println("Enter drink name for drink #" + (i + 1) + ": ");
                 String drinkBrand = scanner.next();
 
@@ -170,6 +222,10 @@ public class UserInterface {
             int numberOfChips = scanner.nextInt();
 
             for (int i = 0; i < numberOfChips; i++) {
+
+                System.out.println("Available chips:");
+                Menu.displayChipsList();
+
                 System.out.println("Enter chips type for chips #" + (i + 1) + ": ");
                 String chipsBrand = scanner.next();
 
@@ -207,10 +263,8 @@ public class UserInterface {
         double[] pricesArray = prices.stream().mapToDouble(Double::doubleValue).toArray();
 
         ArrayList<RegularToppings> regularToppingsList = new ArrayList<>();
-        // Add selected regular toppings to regularToppingsList
 
         ArrayList<String> saucesList = new ArrayList<>();
-        // Add selected sauces to saucesList
 
         ReceiptFileManager receiptFileManager = new ReceiptFileManager("src/main/resources/Receipt.csv");
         receiptFileManager.createReceipt(itemsArray, pricesArray, totalPrice, regularToppingsList, saucesList, drinks, chips);
@@ -222,5 +276,6 @@ public class UserInterface {
 
 
         }
+        checkout.clearOrder();
     }
 }

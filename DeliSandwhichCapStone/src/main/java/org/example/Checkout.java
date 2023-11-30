@@ -65,4 +65,9 @@ public class Checkout {
 
         return totalPrice;
     }
+    public void clearOrder() {
+        sandwiches.clear();
+        drinks.clear();
+        chips.clear();
+    }
 }

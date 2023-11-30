@@ -50,43 +50,43 @@ public class Menu {
         System.out.println("Welcome to the Maven Matrix shop! Crafting Delightful Sandwiches!");
     }
 
-   /* public static void displayMenu() {
+  public static void displayMenu() {
 
-        System.out.println("Bread: ");
-        for (String breadType : getBreadType()) {
-            System.out.println("- " + breadType);
-        }
+      System.out.println("Bread: ");
+      for (String breadType : getBreadType()) {
+          System.out.println("- " + breadType);
+      }
 
-        System.out.println("\n Meats: ");
-        for (String meat : getMeats()) {
-            System.out.println("- " + meat);
-        }
+      System.out.println("\n Meats: ");
+      for (String meat : getMeats()) {
+          System.out.println("- " + meat);
+      }
 
-        System.out.println("\n Cheese: ");
-        for (String cheese : getCheese()) {
-            System.out.println("- " + cheese);
-        }
+      System.out.println("\n Cheese: ");
+      for (String cheese : getCheese()) {
+          System.out.println("- " + cheese);
+      }
 
-        System.out.println("\n Regular Toppings: ");
-        for (String topping : getRegularToppings()) {
-            System.out.println("- " + topping);
-        }
+      System.out.println("\n Regular Toppings: ");
+      for (String topping : getRegularToppings()) {
+          System.out.println("- " + topping);
+      }
 
-        System.out.println("\n Sauces: ");
-        for (String sauces : getSauces()) {
-            System.out.println("- " + sauces);
-        }
+      System.out.println("\n Sauces: ");
+      for (String sauces : getSauces()) {
+          System.out.println("- " + sauces);
+      }
 
-        System.out.println("\n Chips Brands: ");
-        for (String chipsBrand : getChipsBrands()) {
-            System.out.println("- " + chipsBrand);
-        }
+      System.out.println("\n Chips Brands: ");
+      for (String chipsBrand : getChipsBrands()) {
+          System.out.println("- " + chipsBrand);
+      }
 
-        System.out.println("\n Drink Brands: ");
-        for (String drinkBrand : getDrinkBrands()) {
-            System.out.println("- " + drinkBrand);
-        }
-    }*/
+      System.out.println("\n Drink Brands: ");
+      for (String drinkBrand : getDrinkBrands()) {
+          System.out.println("- " + drinkBrand);
+      }
+  }
     public static void displayBreadType() {
         System.out.println("Bread Types:");
         for (String breadType : getBreadType()) {

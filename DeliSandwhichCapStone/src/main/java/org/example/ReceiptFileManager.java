@@ -16,10 +16,12 @@ public class ReceiptFileManager{
         this.fileName = fileName;
     }
 
-    public void createReceipt(String[] items, double[] prices, double totalPrice, ArrayList<RegularToppings> regularTList, ArrayList<String> sauceList, ArrayList<Drink> drinks, ArrayList<Chips> chips) {
+    public void createReceipt(String[] items, double[] prices, double totalPrice, ArrayList<RegularToppings> regularTList, ArrayList<String> sauceList, ArrayList<Drink> drinks, ArrayList<Chips> chips) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
+
             LocalDateTime currentDateTime = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            String receiptFileName = "Receipt_" + currentDateTime.format(formatter) + ".txt";
 
             writer.write("Receipt\n");
             writer.write("Date:," + currentDateTime.format(formatter) + "\n");
@@ -72,11 +74,14 @@ public class ReceiptFileManager{
             }
 
             writer.write("Total Price:" + totalPrice + "\n\n");
-
             System.out.println("Receipt details added to file: " + fileName);
+
+
+
         } catch (IOException e) {
             System.out.println("An error occurred while writing to the receipt file.");
             e.printStackTrace();
+
         }
     }
 

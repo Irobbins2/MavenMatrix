@@ -16,7 +16,7 @@ public class RegularToppings extends Topping{
         return 0;
     }
 
-    public int getName() {
-        return getName();
+    public int getNames() {
+        return getNames();
     }
 }

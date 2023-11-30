@@ -6,14 +6,30 @@ public class Sandwich {
     private int sandwichSize;
     private String breadType;
     private ArrayList<Topping> toppings = new ArrayList<>();
+    private boolean toasted;
 
     public Sandwich(int sandwichSize, String breadType) {
         this.sandwichSize = sandwichSize;
         this.breadType = breadType;
     }
+    public void  addTopping(Topping topping){
+        toppings.add(topping);
+    }
+    public void  removeTopping(Topping topping){
+        toppings.remove(topping);
+    }
+    public void setToasted(boolean toasted) {this.toasted = toasted;}
+    public ArrayList<Topping> getToppings() {return toppings;}
 
     public int getSandwichSize() {
         return sandwichSize;
+    }
+    public double getTotalPrice(){
+        double totalprice=0;
+        for (Topping topping:toppings){
+            totalprice+= topping.getPrice(sandwichSize);
+        }
+        return getSandwichBasePrice()+ totalprice;
     }
 
     public double getSandwichBasePrice() {
@@ -35,18 +51,5 @@ public class Sandwich {
         }
 
         return basePrice ;
-    }
-    public void  addTopping(Topping topping){
-        toppings.add(topping);
-    }
-    public void  removeTopping(Topping topping){
-        toppings.remove(topping);
-    }
-    public double getTotalPrice(){
-        double totalprice=0;
-        for (Topping topping:toppings){
-            totalprice+= topping.getPrice(sandwichSize);
-        }
-        return getSandwichBasePrice()+ totalprice;
     }
 }

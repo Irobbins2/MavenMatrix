@@ -9,4 +9,7 @@ public abstract class Topping {
 
     }
     public abstract double getPrice(int sandwichSize);
+
+    public String getName() {
+    return name;}
 }

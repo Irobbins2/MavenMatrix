@@ -2,13 +2,14 @@ package org.example;
 
 import org.example.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
     private static Checkout checkout = new Checkout();
 
-    public static void runOrderingSystem() {
+    public static void runOrderingSystem() throws IOException {
         Scanner scanner = new Scanner(System.in);
         boolean addingItems = true;
 
@@ -178,7 +179,8 @@ public class UserInterface {
         }
     }
 
-    private static void generateReceipt() {
+    private static void generateReceipt() throws IOException {
+
         ArrayList<Sandwich> sandwiches = checkout.getSandwiches();
         ArrayList<Drink> drinks = checkout.getDrinks();
         ArrayList<Chips> chips = checkout.getChips();
@@ -217,6 +219,8 @@ public class UserInterface {
         System.out.println("Receipt Details:");
         for (String line : receiptDetails) {
             System.out.println(line);
+
+
         }
     }
 }

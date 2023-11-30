@@ -10,37 +10,7 @@ public class UserInterface {
     private static Checkout checkout = new Checkout();
 
 
-    public static void runOrderingSystem() throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        boolean running = true;
-
-        while (running) {
-            displayHomeScreen();
-
-            int userChoice = scanner.nextInt();
-            switch (userChoice) {
-                case 1:
-                    runOrderingSystem();
-                    break;
-                case 0:
-                    running = false;
-                    System.out.println("Exiting the application. Goodbye!");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please enter a valid option.");
-                    break;
-            }
-        }
-    }
-
-    private static void displayHomeScreen() {
-        System.out.println("Welcome to the Sandwich Shop!");
-        System.out.println("1) New Order");
-        System.out.println("0) Exit");
-        System.out.print("Enter your choice: ");
-    }
-
-    static void runOrderingSystem() {
+    static void runOrderingSystem() throws IOException {
         Scanner scanner = new Scanner(System.in);
         boolean ordering = true;
 
@@ -79,6 +49,15 @@ public class UserInterface {
             checkout.clearOrder();
         }
     }
+
+    private static void displayHomeScreen() {
+        System.out.println("Welcome to the Sandwich Shop!");
+        System.out.println("1) New Order");
+        System.out.println("0) Exit");
+        System.out.print("Enter your choice: ");
+    }
+
+
 
     private static void orderSandwich() {
         Scanner scanner = new Scanner(System.in);

@@ -14,6 +14,22 @@ public class Checkout {
         chips = new ArrayList<>();
     }
 
+    public ArrayList<Sandwich> getSandwiches() {
+        return sandwiches;
+    }
+
+    public ArrayList<PremiumToppings> getPremiumToppings() {
+        return premiumToppings;
+    }
+
+    public ArrayList<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public ArrayList<Chips> getChips() {
+        return chips;
+    }
+
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
     }

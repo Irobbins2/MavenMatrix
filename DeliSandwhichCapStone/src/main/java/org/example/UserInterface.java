@@ -275,6 +275,7 @@ public class UserInterface {
     }
 
     private static void generateReceipt() throws IOException {
+
         ArrayList<Sandwich> sandwiches = checkout.getSandwiches();
         ArrayList<Drink> drinks = checkout.getDrinks();
         ArrayList<Chips> chips = checkout.getChips();
@@ -311,6 +312,8 @@ public class UserInterface {
         System.out.println("Receipt Details:");
         for (String line : receiptDetails) {
             System.out.println(line);
+
+
         }
         checkout.clearOrder();
     }

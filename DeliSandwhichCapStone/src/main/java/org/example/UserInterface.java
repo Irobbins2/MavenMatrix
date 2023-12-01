@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class UserInterface {
     private static Checkout checkout = new Checkout();
 
+
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -36,6 +37,7 @@ public class UserInterface {
         System.out.println("0) Exit");
         System.out.print("Enter your choice: ");
     }
+
     static void runOrderingSystem() throws IOException {
         Scanner scanner = new Scanner(System.in);
         boolean ordering = true;
@@ -74,6 +76,8 @@ public class UserInterface {
             checkout.clearOrder();
         }
     }
+
+    
     private static void orderSandwich() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What type of bread do you want?");

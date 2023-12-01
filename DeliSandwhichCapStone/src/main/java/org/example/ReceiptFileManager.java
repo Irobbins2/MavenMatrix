@@ -59,11 +59,14 @@ public class ReceiptFileManager{
                 }
             }
             writer.write("Total Price:" + totalPrice + "\n\n");
-            System.out.println("Receipt details added to file: " + fileName);
+            System.out.println("Receipt details added to file: " + fileName);==
+
+
 
         } catch (IOException e) {
             System.out.println("An error occurred while writing to the receipt file.");
             e.printStackTrace();
+
         }
     }
     public ArrayList<String> getReceipt() {

@@ -2,7 +2,7 @@ package org.example;
 
 public class BLT extends Sandwich {
 
-    public BLT() {
+    public BLT () {
         super(8, "White");
         addTopping(new RegularToppings("Bacon"));
         addTopping(new PremiumToppings("Cheddar", PremiumToppingType.CHEESE));

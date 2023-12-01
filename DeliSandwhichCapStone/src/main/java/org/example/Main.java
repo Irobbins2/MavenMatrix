@@ -7,6 +7,5 @@ public class Main {
 
         Menu.displayMenu();
         UserInterface.runOrderingSystem();
-
     }
 }

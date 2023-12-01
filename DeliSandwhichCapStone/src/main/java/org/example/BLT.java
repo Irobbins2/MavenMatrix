@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class BLT extends Sandwich {
 
     public BLT () {
@@ -12,24 +10,5 @@ public class BLT extends Sandwich {
         addTopping(new RegularToppings("Tomato"));
         addTopping(new RegularToppings("Ranch"));
         setToasted(true);
-    }
-    public void removeTopping(String toppingName) {
-        ArrayList<Topping> toppings = getToppings();
-        for (int i = 0; i < toppings.size(); i++) {
-            if (toppings.get(i).getName().equalsIgnoreCase(toppingName)) {
-                toppings.remove(i);
-                break;
-            }
-        }
-    }
-
-    public void modifyTopping(String oldTopping, Topping newTopping) {
-        ArrayList<Topping> toppings = getToppings();
-        for (int i = 0; i < toppings.size(); i++) {
-            if (toppings.get(i).getName().equalsIgnoreCase(oldTopping)) {
-                toppings.set(i, newTopping);
-                break;
-            }
-        }
     }
 }

@@ -18,9 +18,6 @@ public class Checkout {
         return sandwiches;
     }
 
-    public ArrayList<PremiumToppings> getPremiumToppings() {
-        return premiumToppings;
-    }
 
     public ArrayList<Drink> getDrinks() {
         return drinks;
@@ -42,11 +39,6 @@ public class Checkout {
         this.chips.add(chips);
     }
 
-    public void listAmountOfItems() {
-        System.out.println("Number of Sandwiches: " + sandwiches.size());
-        System.out.println("Number of Drinks: " + drinks.size());
-        System.out.println("Number of Chips: " + chips.size());
-    }
 
     public double totalPrice() {
         double totalPrice = 0;

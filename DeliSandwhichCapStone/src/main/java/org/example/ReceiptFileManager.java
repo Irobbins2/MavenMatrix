@@ -27,7 +27,7 @@ public class ReceiptFileManager{
             writer.write("Date:," + currentDateTime.format(formatter) + "\n");
             writer.write("Item/Price\n");
 
-            // Write items and prices
+
             for (int i = 0; i < items.length; i++) {
                 writer.write(items[i] + "," + prices[i] + "\n");
             }
@@ -41,7 +41,7 @@ public class ReceiptFileManager{
                 writer.write("\n---Additional Details---\n");
             }
 
-            // Write regular toppings
+
             if (hasRegularToppings) {
                 writer.write("Regular Toppings:\n");
                 for (RegularToppings topping : regularTList) {
@@ -49,7 +49,7 @@ public class ReceiptFileManager{
                 }
             }
 
-            // Write sauces
+
             if (hasSauces) {
                 writer.write("Sauces:\n");
                 for (String sauce : sauceList) {
@@ -57,7 +57,7 @@ public class ReceiptFileManager{
                 }
             }
 
-            // Write drinks
+
             if (hasDrinks) {
                 writer.write("Drinks:\n");
                 for (Drink drink : drinks) {
@@ -65,7 +65,7 @@ public class ReceiptFileManager{
                 }
             }
 
-            // Write chips
+
             if (hasChips) {
                 writer.write("Chips:\n");
                 for (Chips chip : chips) {

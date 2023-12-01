@@ -19,7 +19,9 @@ public class Sandwich {
         toppings.remove(topping);
     }
     public void setToasted(boolean toasted) {this.toasted = toasted;}
+
     public ArrayList<Topping> getToppings() {return toppings;}
+
 
     public double getTotalPrice(){
         double totalprice=0;
@@ -28,10 +30,8 @@ public class Sandwich {
         }
         return getSandwichBasePrice()+ totalprice;
     }
-
     public double getSandwichBasePrice() {
         double basePrice;
-
         switch (sandwichSize) {
             case 4:
                 basePrice = 5.50;
@@ -46,7 +46,6 @@ public class Sandwich {
                 basePrice = 0.0;
                 break;
         }
-
         return basePrice ;
     }
 }

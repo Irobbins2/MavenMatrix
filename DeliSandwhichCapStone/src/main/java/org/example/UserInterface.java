@@ -206,15 +206,15 @@ public class UserInterface {
                     PremiumToppings extraCheeseTopping = new PremiumToppings("Extra Cheese", PremiumToppingType.EXTRA_CHEESE);
                     sandwich.addTopping(extraCheeseTopping);
                 }
-                    if (toppingName.equalsIgnoreCase("done")) {
-                        addingToppings = false;
-                    } else {
-                        Topping topping = new RegularToppings(toppingName);
-                        signatureSandwich.addTopping(topping);
-                        System.out.println(toppingName + " added to your sandwich.");
-                    }
+                if (toppingName.equalsIgnoreCase("done")) {
+                    addingToppings = false;
+                } else {
+                    Topping topping = new RegularToppings(toppingName);
+                    signatureSandwich.addTopping(topping);
+                    System.out.println(toppingName + " added to your sandwich.");
                 }
             }
+        }
         System.out.print("Do you want to remove toppings? (yes/no): ");
         String removeToppingsChoice = scanner.next();
         if (removeToppingsChoice.equalsIgnoreCase("yes")) {

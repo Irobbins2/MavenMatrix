@@ -10,8 +10,4 @@ ColoredText {
     public static final String ANSI_MIXED = "\u001B[31;32m";
     public static final String ANSI_ORANGE = "\u001B[38;5;208m";
 
-
 }
-
-
-

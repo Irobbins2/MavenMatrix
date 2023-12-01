@@ -11,7 +11,4 @@ public class BLT extends Sandwich {
         addTopping(new RegularToppings("Ranch"));
         setToasted(true);
     }
-
 }
-
-

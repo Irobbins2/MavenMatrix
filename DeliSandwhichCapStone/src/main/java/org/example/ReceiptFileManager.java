@@ -10,19 +10,21 @@ public class ReceiptFileManager{
     private String fileName;
     private ReceiptFileManager receipt;
 
-
-
     public ReceiptFileManager(String fileName) {
         this.fileName = fileName;
     }
 
-    public void createReceipt(String[] items, double[] prices, double totalPrice, ArrayList<RegularToppings> regularTList, ArrayList<String> sauceList, ArrayList<Drink> drinks, ArrayList<Chips> chips) {
+    public void createReceipt(String[] items, double[] prices, double totalPrice, ArrayList<RegularToppings> regularTList, ArrayList<String> sauceList, ArrayList<Drink> drinks, ArrayList<Chips> chips) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
+
             LocalDateTime currentDateTime = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            String receiptFileName = "Receipt_" + currentDateTime.format(formatter) + ".txt";
+
             writer.write("Receipt\n");
             writer.write("Date:," + currentDateTime.format(formatter) + "\n");
             writer.write("Item/Price\n");
+
             for (int i = 0; i < items.length; i++) {
                 writer.write(items[i] + "," + prices[i] + "\n");
             }
@@ -58,14 +60,13 @@ public class ReceiptFileManager{
                 }
             }
             writer.write("Total Price:" + totalPrice + "\n\n");
-            writer.close();
             System.out.println("Receipt details added to file: " + fileName);
+
         } catch (IOException e) {
             System.out.println("An error occurred while writing to the receipt file.");
             e.printStackTrace();
         }
     }
-
     public ArrayList<String> getReceipt() {
         ArrayList<String> receipt = new ArrayList<>();
 

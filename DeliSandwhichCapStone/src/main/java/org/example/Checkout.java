@@ -2,7 +2,6 @@ package org.example;
 import java.util.ArrayList;
 public class Checkout {
     private ArrayList<Sandwich> sandwiches;
-    private ArrayList<PremiumToppings> premiumToppings;
     private ArrayList<Drink> drinks;
     private ArrayList<Chips> chips;
     public Checkout() {

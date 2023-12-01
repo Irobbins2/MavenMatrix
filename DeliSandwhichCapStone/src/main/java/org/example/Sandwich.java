@@ -19,11 +19,6 @@ public class Sandwich {
         toppings.remove(topping);
     }
     public void setToasted(boolean toasted) {this.toasted = toasted;}
-    public ArrayList<Topping> getToppings() {return toppings;}
-
-    public int getSandwichSize() {
-        return sandwichSize;
-    }
     public double getTotalPrice(){
         double totalprice=0;
         for (Topping topping:toppings){

@@ -11,7 +11,3 @@ public class PhillyCheeseSteak extends Sandwich{
         setToasted(true);
     }
 }
-
-
-
-

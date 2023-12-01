@@ -1,12 +1,13 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
     private static Checkout checkout = new Checkout();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -35,7 +36,7 @@ public class UserInterface {
         System.out.println("0) Exit");
         System.out.print("Enter your choice: ");
     }
-    static void runOrderingSystem() {
+    static void runOrderingSystem() throws IOException {
         Scanner scanner = new Scanner(System.in);
         boolean ordering = true;
         while (ordering) {
@@ -273,7 +274,7 @@ public class UserInterface {
         }
     }
 
-    private static void generateReceipt() {
+    private static void generateReceipt() throws IOException {
         ArrayList<Sandwich> sandwiches = checkout.getSandwiches();
         ArrayList<Drink> drinks = checkout.getDrinks();
         ArrayList<Chips> chips = checkout.getChips();

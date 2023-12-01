@@ -212,3 +212,15 @@ Item/Price
 Sandwich,8.5
 Total Price:8.5
 
+Receipt
+Date:,2023-11-30 20:41:35
+Item/Price
+Sandwich,8.5
+Drink,2.0
+
+---Additional Details---
+Drinks:
+Size: small
+
+Total Price:10.5
+

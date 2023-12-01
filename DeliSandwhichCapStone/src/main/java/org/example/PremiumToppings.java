@@ -9,7 +9,6 @@ public class PremiumToppings extends Topping {
     }
 
     @Override
-
     public double getPrice(int sandwichSize) {
         double totalPrice = 0;
         switch (premiumToppingType) {

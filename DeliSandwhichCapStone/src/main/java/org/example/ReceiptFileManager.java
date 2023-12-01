@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class ReceiptFileManager{
 
     private String fileName;
-    private ReceiptFileManager receipt;
 
     public ReceiptFileManager(String fileName) {
         this.fileName = fileName;

@@ -173,3 +173,36 @@ Item/Price
 Sandwich,5.5
 Total Price:5.5
 
+Receipt
+Date:,2023-11-30 15:28:06
+Item/Price
+Sandwich,8.5
+Total Price:8.5
+
+Receipt
+Date:,2023-11-30 15:29:12
+Item/Price
+Sandwich,8.5
+Total Price:8.5
+
+Receipt
+Date:,2023-11-30 15:39:00
+Item/Price
+Sandwich,9.0
+Total Price:9.0
+
+Receipt
+Date:,2023-11-30 18:37:17
+Item/Price
+Sandwich,8.5
+Drink,2.0
+Drink,2.0
+
+---Additional Details---
+Drinks:
+Size: small
+
+Size: small
+
+Total Price:12.5
+

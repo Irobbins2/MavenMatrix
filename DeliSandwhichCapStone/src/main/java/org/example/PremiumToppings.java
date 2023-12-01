@@ -8,13 +8,10 @@ public class PremiumToppings extends Topping {
         this.premiumToppingType = premiumToppingType;
     }
 
-
     @Override
-
 
     public double getPrice(int sandwichSize) {
         double totalPrice = 0;
-
         switch (premiumToppingType) {
             case CHEESE:
                 if (sandwichSize == 4) {

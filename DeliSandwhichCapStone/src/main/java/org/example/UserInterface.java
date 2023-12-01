@@ -55,7 +55,7 @@ public class UserInterface {
                     signatureSandwich();
                     break;
                 default:
-                    System.out.println("Invalid item type. Please choose sandwich, drink, or chips.");
+                    System.out.println("Invalid item type. Please choose sandwich, signature, drink, or chips.");
                     break;
             }
             System.out.println("Would you like to add another item to your order? (yes/no)");

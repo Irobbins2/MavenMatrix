@@ -200,27 +200,27 @@ Total Price:5.5
 Receipt
 <<<<<<< HEAD
 Date:,2023-11-30 21:17:19
-=======
+
 Date:,2023-11-30 15:28:06
->>>>>>> d4af01fd01725e85b595bafae2ef1919f93ef13a
+
 Item/Price
 Sandwich,8.5
 Total Price:8.5
 
 Receipt
-<<<<<<< HEAD
+
 Date:,2023-11-30 21:18:53
-=======
+
 Date:,2023-11-30 15:29:12
->>>>>>> d4af01fd01725e85b595bafae2ef1919f93ef13a
+
 Item/Price
 Sandwich,8.5
 Total Price:8.5
 
 Receipt
-<<<<<<< HEAD
+
 Date:,2023-11-30 21:59:09
-=======
+
 Date:,2023-11-30 15:39:00
 Item/Price
 Sandwich,9.0
@@ -243,13 +243,11 @@ Total Price:12.5
 
 Receipt
 Date:,2023-11-30 20:01:45
->>>>>>> d4af01fd01725e85b595bafae2ef1919f93ef13a
+
 Item/Price
 Sandwich,8.5
 Total Price:8.5
 
-<<<<<<< HEAD
-=======
 Receipt
 Date:,2023-11-30 20:41:35
 Item/Price
@@ -263,4 +261,4 @@ Size: small
 Total Price:10.5
 
 
->>>>>>> d4af01fd01725e85b595bafae2ef1919f93ef13a
+
